@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:localization_example/models/sample.dart';
 import 'package:localization_example/models/student.dart';
 import 'package:localization_example/views/settings_view.dart';
 
 //import 'sample_item.dart';
 import 'sample_item_details_view.dart';
 
+List<Student> sampleItem=const [
+  Student('s1', 'John','IX'),
+  Student('s2', 'Json', 'X'),
+  Student('s3', 'Maria','XI'),
+];
+
+
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {
   const SampleItemListView({
     Key? key,
-    this.students = const [
-      Student('s1', 'John','IX'),
-      Student('s2', 'Json', 'X'),
-      Student('s3', 'Maria','XI'),
-    ],
+    this.items =const [
+      SampleItem(1), SampleItem(2), SampleItem(3),
+
+    ]
   }) : super(key: key);
 
   static const routeName = '/';
 
   final List<Student> students;
+  final List<SampleItem> items;
 
   @override
   Widget build(BuildContext context) {
